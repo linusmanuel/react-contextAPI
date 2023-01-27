@@ -2,8 +2,11 @@ import { Container, Header, Lista } from './styles';
 import feira from './feira.json';
 import Produto from 'components/Produto';
 import NavBar from './NavBar';
+import { useContext } from 'react';
+import { UsuarioContex } from 'common/context/Usuario';
 
-function Feira({ nome, saldo }) {
+function Feira() {
+	const { nome, setNome, saldo, setSaldo } = useContext(UsuarioContex);
 	return (
 		<Container>
 			<NavBar />
