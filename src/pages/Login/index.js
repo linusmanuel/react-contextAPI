@@ -8,6 +8,7 @@ import { useContext } from 'react';
 function Login() {
 	const history = useHistory();
 	const { nome, setNome, saldo, setSaldo } = useContext(UsuarioContex);
+	UsuarioContex.displayName = 'Usuário';
 	return (
 		<Container>
 			<Titulo>Insira o seu nome</Titulo>

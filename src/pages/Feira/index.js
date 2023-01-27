@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { UsuarioContex } from 'common/context/Usuario';
 
 function Feira() {
-	const { nome, setNome, saldo, setSaldo } = useContext(UsuarioContex);
+	const { nome, saldo } = useContext(UsuarioContex);
 	return (
 		<Container>
 			<NavBar />
