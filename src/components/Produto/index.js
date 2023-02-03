@@ -24,6 +24,7 @@ function Produto({ nome, foto, id, valor, unidade }) {
 				</IconButton>
 				{produtoNoCarrinho?.quantidade || 0}
 				<IconButton
+					color="primary"
 					onClick={() => {
 						adicionarProduto({ nome, foto, id, valor });
 					}}
