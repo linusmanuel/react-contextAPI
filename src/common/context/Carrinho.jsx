@@ -33,9 +33,22 @@ export const useCarrinhoContext = () => {
 			})
 		);
 	}
+	function removeProduto(id) {
+		const produto = carrinho.find(itemDoCarrinho => itemDoCarrinho.id === id)
+		const ehOUltilmo = produto.quantidade === 1
+		if(ehOUltilmo) {
+			return setCarrinho(carrinhoAnterior => carrinhoAnterior.filter(itemDoCarrinho => itemDoCarrinho.id !== id))
+		}
+		setCarrinho(carrinhoAnterior => carrinhoAnterior.map(itemDoCarrinho => {
+			if(itemDoCarrinho.id === id) itemDoCarrinho.quantidade -= 1
+			return itemDoCarrinho
+		}))
+	}
+
   return {
     carrinho,
     setCarrinho,
-    adicionarProduto
+    adicionarProduto,
+		removeProduto
   }
 }
